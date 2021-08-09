@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>C lang Cheatsheet By Shuence</title>
+        <meta name="description" content="C lang Cheatsheet By Shuence C lang practice C lang coding Coding Cheatsheetfor beginners">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <style type="text/css">@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmSU5fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu72xKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu5mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7mxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7WxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu7GxKKTU1Kvnz.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCRc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fABc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCBc4AMP6lbBP.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0370-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fCxc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fChc4AMP6lbBP.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v27/KFOlCnqEu92Fr1MmEU9fBBc4AMP6lQ.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+    </head>
+    <body>
+        <script src="script.js" async defer></script>
+    </body>
+    <body>
+        <p>Basic syntax and functions from the C programming language.</p>
+        
+        <h3>Boilerplate Code</h3>
+        
+        <pre class="language-c">
+            <code>#include&lt;stdio.h&gt;
+            int main()
+            {
+            return(0);
+            }</code>
+        </pre>
+       
+        <h3>printf function</h3>
+        
+        <p>It is used to show output on the screen</p>
+       
+        <pre class="language-c">
+            <code>printf("Hello World!")</code>
+        </pre>
+       
+        <h3>scanf function</h3>
+        
+        <p>It is used to take input from the user</p>
+        
+        <pre class="language-c">
+            <code>scanf("placeholder", variables)</code>
+        </pre>
+        
+        <h2>Comments</h2>
+        
+        <p>A comment is the code that is not executed by the compiler, and the programmer uses it to keep track of the code.</p>
+        
+        <h3>Single line comment</h3>
+        
+        <pre class="language-c">
+            <code>// It's a single line comment</code>
+        </pre>
+
+        <h3>Multi-line comment</h3>
+
+        <pre class="language-c">
+            <code>/* It's a 
+                    multi-line
+                    comment*/</code>
+            </pre>
+
+        <h2>Data types</h2>
+
+        <p>The data type is the type of data</p>
+
+        <h3>Character type</h3>
+
+        <p>Typically a single octet(one byte). It is an integer type</p>
+
+        <pre class="language-c">
+            <code>char variable_name;</code>
+        </pre>
+
+        <h3>Integer type</h3>
+
+        <p>The most natural size of integer for the machine</p>
+
+        <pre class="language-c">
+            <code>int variable_name;</code>
+        </pre>
+
+        <h3>Float type</h3>
+
+        <p>A single-precision floating-point value</p>
+
+        <pre class="language-c">
+            <code>float variable_name;</code>
+        </pre>
+
+        <h3>Double type</h3>
+
+        <p>A double-precision floating-point value</p>
+
+        <pre class="language-c">
+            <code>double variable_name;</code>
+        </pre>
+
+        <h3>Void type</h3>
+
+        <p>Represents the absence of the type</p>
+
+        <pre class="language-c">
+            <code>void</code>
+        </pre>
+
+        <h2>Escape Sequences</h2>
+
+        <p>It is a sequence of characters starting with a backslash, and it doesn't represent itself when used inside string literal.</p>
+
+        <h3>Alarm or Beep</h3>
+
+        <p>It produces a beep sound</p>
+
+        <pre class="language-c">
+            <code>\a</code>
+        </pre>
+
+        <h3>Backspace</h3>
+
+        <p>It adds a backspace</p>
+
+        <pre class="language-c">
+            <code>\b</code>
+        </pre>
+
+
+        <h3>Form feed</h3>
+
+        <pre class="language-c"><code>\f</code></pre>
+
+        <h3>Newline</h3>
+
+        <p>Newline Character</p>
+
+        <pre class="language-c"><code>\n</code></pre>
+
+        <h3>Carriage return</h3>
+
+        <pre class="language-c"><code>\r</code></pre>
+
+        <h3>Tab</h3>
+
+        <p>It gives a tab space</p>
+
+        <pre class="language-c"><code>\t</code></pre>
+
+        <h3>Backslash</h3>
+
+        <p>It adds a backslash</p>
+
+        <pre class="language-c"><code>\\</code></pre>
+
+        <h3>Single quote</h3>
+
+        <p>It adds a single quotation mark</p>
+
+        <pre class="language-c">
+            <code>\'</code>
+        </pre>
+
+        <h3>Question mark</h3>
+
+        <p>It adds a question mark</p>
+
+        <pre class="language-c">
+            <code>\?</code>
+        </pre>
+
+        <h3>Octal No.</h3>
+
+        <p>It represents the value of an octal number</p>
+
+        <pre class="language-c">
+            <code>\nnn</code>
+        </pre>
+
+        <h3>Hexadecimal No.</h3>
+
+        <p>It represents the value of a hexadecimal number</p>
+
+        <pre class="language-c">
+            <code>\xhh</code>
+        </pre>
+
+        <h3>Null</h3>
+
+        <p>The null character is usually used to terminate a string</p>
+
+        <pre class="language-c">
+            <code>\0</code>
+        </pre>
+
+        <h2>Conditional Instructions</h2>
+
+        <p>Conditional statements are used to perform operations based on some condition.</p>
+
+        <h3>If Statement</h3>
+
+        <pre class="language-c">
+            <code>
+            if (/* condition */)
+            {
+                /* code */
+            }
+            </code>
+        </pre>
+
+            <h3>If-else Statement</h3>
+
+            <pre class="language-c">
+                <code>
+                if (/* condition */)
+                {
+                    /* code */
+                }
+                else{ /* Code */
+                }
+                </code>
+            </pre>
+            
+            <h3>if else-if Statement</h3>
+
+            <pre class="language-c">
+                <code>if (condition) {
+                // Statements;
+                }
+                else if (condition){
+                // Statements;
+                }
+                else{
+                // Statements
+                }</code>
+            </pre>
+
+            <h3>Switch Case Statement</h3>
+
+            <p>It allows a variable to be tested for equality against a list of values (cases).</p>
+
+            <pre class="language-c">
+                <code>switch (expression) 
+                {
+                    case constant-expression: 
+                    statement1;
+                    statement2;
+                    break;
+                    case constant-expression: 
+                    statement;
+                    break;
+                    ...
+                    default: 
+                    statement;
+                }</code>
+            </pre>
+
+                <h2>Iterative Statements</h2>
+
+                <p>Iterative statements facilitate programmers to execute any block of code lines repeatedly and can be controlled as per conditions added by the programmer.</p>
+
+                <h3>while Loop</h3>
+
+                <p>It allows execution of statement inside the block of the loop until the condition of loop succeeds.</p>
+
+                <pre class="language-c">
+                    <code>while (/* condition */)
+                    {
+                        /* code */
+                    }</code>
+                </pre>
+
+                    <h3>do-while loop</h3>
+
+                    <p>It is an exit controlled loop. It is very similar to the while loop with one difference, i.e., the body of the do-while loop is executed at least once even if the expression is false</p>
+
+                    <pre class="language-c"><code>do
+                        {
+                            /* code */
+                        } while (/* condition */);
+                    </code>
+                    </pre>
+
+                        <h3>for loop</h3>
+
+                        <p>It is used to iterate the statements or a part of the program several times. It is frequently used to traverse the data structures like the array and linked list.</p>
+
+                        <pre class="language-c">
+                            <code>for (int i = 0; i &lt; count; i++)
+                            {
+                                /* code */
+                            }</code>
+                        </pre>
+
+                            <h3>Break Statement</h3>
+
+                            <p>break keyword inside the loop is used to terminate the loop</p>
+
+                            <pre class="language-c">
+                                <code>break;</code>
+                            </pre>
+
+                            <h3>Continue Statement</h3>
+
+                            <p>continue keyword skips the rest of the current iteration of the loop and returns to the starting point of the loop</p>
+
+                            <pre class="language-c">
+                                <code>continue;</code>
+                            </pre>
+
+                            <h2>Functions &amp; Recursion</h2>
+
+                            <p>Functions are used to divide an extensive program into smaller pieces. It can be called multiple times to provide reusability and modularity to the C program.</p>
+
+                            <h3>Function Definition</h3>
+
+                            <pre class="language-c"><code>return_type function_name(data_type parameter...){ 
+
+                                //code to be executed 
+
+                            }</code></pre>
+
+                            <h3>Recursion</h3>
+
+                            <p>Recursion is when a function calls a copy of itself to work on a minor problem. And the function that calls itself is known as the Recursive function.</p>
+
+                            <pre class="language-c"><code>void recurse()
+
+                                {
+
+                                    ... .. ...
+
+                                    recurse();
+
+                                    ... .. ...
+
+                                }</code></pre>
+
+                                <h2>Pointers</h2>
+
+                                <p>Pointer is a variable that contains the address of another variable,</p>
+
+                                <h3>Declaration</h3>
+
+                                <pre class="language-c"><code>datatype *var_name;</code></pre>
+
+                                <h2>Arrays</h2>
+
+                                <p>An array is a collection of data items of the same type.</p>
+
+                                <h3>Declaration</h3>
+
+                                <pre class="language-c"><code>data_type array_name[array_size];</code></pre>
+
+                                <h3>Accessing element</h3>
+
+                                <pre class="language-c"><code>int variable_name = array[index];</code></pre>
+
+                                <h2>Strings</h2>
+
+                                <p>A string is a 1-D character array terminated by a null character ('\0')</p>
+
+                                <h3>Declaration</h3>
+
+                                <pre class="language-c"><code>char str_name[size];</code></pre>
+
+                                <h3>gets() function</h3>
+
+                                <p>It allows you to enter multi-word string</p>
+
+                                <pre class="language-c"><code>gets("string");</code></pre>
+
+                                <h3>puts() function</h3>
+
+                                <p>It is used to show string output</p>
+
+                                <pre class="language-c"><code>puts("string");</code></pre>
+
+                                <h3>String Functions strlen()</h3>
+
+                                <p>It is used to calculate the length of the string</p>
+
+                                <pre class="language-c"><code>strlen(string_name);</code></pre>
+
+                                <h3>strcpy() function</h3>
+
+                                <p>It is used to copy the content of second-string into the first string passed to it</p>
+
+                                <pre class="language-c"><code>strcpy(destination, source);</code></pre>
+
+                                <h3>strcat() function</h3>
+
+                                <p>It is used to concatenate two strings</p>
+
+                                <pre class="language-c"><code>strcat(first_string, second_string);</code></pre>
+
+                                <h3>strcmp() function</h3>
+
+                                <p>It is used to compare two strings</p>
+
+                                <pre class="language-c"><code>strcmp(first_string, second_string);</code></pre>
+
+                                <h2>Structures</h2>
+
+                                <p>The structure is a collection of variables of different types under a single name. Defining structure means creating a new data type.</p>
+
+                                <h3>Structure syntax</h3>
+
+                                <pre class="language-c"><code>struct structureName 
+
+                                    {
+
+                                        dataType member1;
+
+                                        dataType member2;
+
+                                        ...
+
+                                    };</code></pre>
+
+                                    <h3>typedef keyword</h3>
+
+                                    <p>typedef function allows users to provide alternative names for the primitive and user-defined data types.</p>
+
+                                    <pre class="language-c"><code>typedef struct structureName 
+
+                                        {
+
+                                            dataType member1;
+
+                                            dataType member2;
+
+                                            ...
+
+                                        }new_name;</code></pre>
+
+                                        <h2>File Handling</h2>
+
+                                        <p>A set of methods for handling File IO (read/write/append) in C language</p>
+
+                                        <h3>FILE pointer</h3>
+
+                                        <pre class="language-c"><code>FILE *filePointer;</code></pre>
+
+                                        <h2>&nbsp;</h2>
+
+                                        <h3>Opening a file</h3>
+
+                                        <p>It is used to open file in C.</p>
+
+                                        <pre class="language-c"><code>filePointer = fopen(fileName.txt, w)</code></pre>
+
+                                        <h3>fscanf() function</h3>
+
+                                        <p>It is used to read the content of file.</p>
+
+                                        <pre class="language-c"><code>fscanf(FILE *stream, const char *format, ...)</code></pre>
+
+                                        <h3>fprintf() function</h3>
+
+                                        <p>It is used to write content into the file.</p>
+
+                                        <pre class="language-c"><code>fprintf(FILE *fptr, const char *str, ...);</code></pre>
+
+                                        <h3>fgetc() function</h3>
+
+                                        <p>It reads a character from a file opened in read mode. It returns EOF on reaching the end of file.</p>
+
+                                        <pre class="language-c"><code>fgetc(FILE *pointer);</code></pre>
+
+                                        <h3>fputc() function</h3>
+
+                                        <p>It writes a character to a file opened in write mode</p>
+
+                                        <pre class="language-c"><code>fputc(char, FILE *pointer);</code></pre>
+
+                                        <h3>Closing a file</h3>
+
+                                        <p>It closes the file.</p>
+
+                                        <pre class="language-c"><code>fclose(filePointer);</code></pre>
+
+                                        <h2>Dynamic Memory Allocation</h2>
+
+                                        <p>A set of functions for dynamic memory allocation from the heap. These methods are used to use the dynamic memory which makes our C programs more efficient</p>
+
+                                        <h3>malloc() function</h3>
+
+                                        <p>Stands for 'Memory allocation' and reserves a block of memory with the given amount of bytes.</p>
+
+                                        <pre class="language-c"><code>ptr = (castType*) malloc(size);</code></pre>
+
+                                        <h3>calloc() function</h3>
+
+                                        <p>Stands for 'Contiguous allocation' and reserves n blocks of memory with the given amount of bytes.</p>
+
+                                        <pre class="language-c"><code>ptr = (castType*)calloc(n, size);</code></pre>
+
+                                        <h3>free function</h3>
+
+                                        <p>It is used to free the allocated memory.</p>
+
+                                        <pre class="language-c"><code>free(ptr);</code></pre>
+
+                                        <h3>realloc() function</h3>
+
+                                        <p>If the allocated memory is insufficient, then we can change the size of previously allocated memory using this function for efficiency purposes</p>
+
+                                        <pre class="language-c"><code>ptr = realloc(ptr, x);</code></pre>
+
+                                        <p>&nbsp;</p>
+
+                                        <div><a class="btn btn-danger" role="button" href="https://api.codewithharry.com/media/blogFiles/c-cheatsheet/C_Cheatsheet_CodeWithHarry.pdf" target="_blank" rel="noopener"> Download this Cheatsheet</a></div>
+
+                                        <div>&nbsp;</div>
+                                    </body>
+                                    </html>
